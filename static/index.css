@@ -1,22 +1,24 @@
 body {
     font-family: 'PT Mono', monospace;
-    background-color: rgb(25, 85, 126);
+    background-color: #212121;
 }
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    /*background-color: white;*/
     padding: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 250px;
+    padding-right: 250px;
+    padding-bottom: 100px;
     border-radius: 10px;
 }
 
 a {
     text-decoration: none;
-    color: rgb(25, 85, 126);
+    color: white;
+    font-size: 20px;
 }
 
 .title, .description {
@@ -35,12 +37,20 @@ main {
 }
 
 button {
-    font-size: 20px;
-    font-family: 'PT Mono', monospace;
-    height: 70px;
-    width: 250px;
-    border-radius: 20px;
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow: 3px 3px #fafafa;
     cursor: pointer;
-    background-color: white;
-    color: rgb(25, 85, 126);
+    margin: 35px 0;  
+}
+  
+button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
 }
