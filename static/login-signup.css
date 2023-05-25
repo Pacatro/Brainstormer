@@ -1,0 +1,102 @@
+body {
+    font-family: 'PT Mono', monospace;
+    background-color: #212121;
+    color: white;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-left: 250px;
+    padding-right: 250px;
+    padding-bottom: 100px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.form {
+    --input-focus: white;
+    --font-color: white;
+    --font-color-sub: #666;
+    --bg-color: #212121;
+    --main-color: white;
+    padding: 60px;
+    background: #212121;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 20px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+}
+  
+.title {
+    color: var(--font-color);
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 19px;
+}
+  
+.input {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+}
+  
+.input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+}
+  
+.input:focus {
+    border: 2px solid var(--input-focus);
+}
+  
+.login-with {
+    display: flex;
+    gap: 20px;
+}
+
+.button-confirm:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+}
+  
+.button-confirm {
+    margin: 20px auto 0 auto;
+    width: 130px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+}
+  
