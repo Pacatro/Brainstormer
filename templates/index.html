@@ -15,8 +15,12 @@
             <a href="/">Brainstormer</a>
             <a href="/editor">Ideas editor</a>
             <a href="/">Brainstorminator</a>
+            {%if not is_login%}
             <a href="/login">Log In</a>
             <a href="/create_account">Sign Up</a>
+            {%else%}
+            <h3>{{username}}</h3>
+            {%endif%}
         </header>
         <h1 class="title">Brainstormer</h1>
         <h2 class="description">Your ideas, always with you</h2>    

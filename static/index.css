@@ -54,3 +54,7 @@ button:active {
     box-shadow: none;
     transform: translate(3px, 3px);
 }
+
+h3 {
+    color: white;
+}
