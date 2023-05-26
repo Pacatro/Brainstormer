@@ -3,9 +3,11 @@ from src.classes.user import User
 
 app = Flask(__name__)
 
+is_login: bool = False
+
 @app.route('/')
 def index():
-    return render_template('index.html', is_login=False, username="")
+    return render_template('index.html', is_login=is_login, username="")
 
 @app.route('/editor')
 def editor():
@@ -25,12 +27,27 @@ def signup():
     email = request.form['email']
     password = request.form['password']
     
-    user = User(username, email, password)
+    user = User(email, password, username)
+    
+    if user.is_in_db():
+        return redirect('/login')
+
+    user.signup()
+    is_login = True
+    return render_template('index.html', is_login=is_login,  username=user.get_username())
+
+@app.route('/auth', methods=['POST'])
+def auth():
+    email = request.form['email']
+    password = request.form['password']
+    
+    user = User(email, password)
     
     if not user.is_in_db():
-        user.signup()
-        return render_template('index.html', is_login=True,  username=user.get_username())
-    return "No"
+        return redirect('/create_account')
+    
+    is_login = True
+    return render_template('index.html', is_login=is_login,  username=user.get_username())
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
